@@ -12,6 +12,7 @@
 		14742F7B227269A3007826E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14742F79227269A3007826E9 /* Main.storyboard */; };
 		14742F7D227269A5007826E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14742F7C227269A5007826E9 /* Assets.xcassets */; };
 		14742F80227269A5007826E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14742F7E227269A5007826E9 /* LaunchScreen.storyboard */; };
+		1C9F87BD64475D44E4220B59 /* Pods_SeeFoodIBM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87707DA255CE4DAD0949166 /* Pods_SeeFoodIBM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		14742F7C227269A5007826E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14742F7F227269A5007826E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14742F81227269A5007826E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43EE3ABEEC8243175F26EC45 /* Pods-SeeFoodIBM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeFoodIBM.debug.xcconfig"; path = "Target Support Files/Pods-SeeFoodIBM/Pods-SeeFoodIBM.debug.xcconfig"; sourceTree = "<group>"; };
+		A87707DA255CE4DAD0949166 /* Pods_SeeFoodIBM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeeFoodIBM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39875A6DE6DC332BD34B931 /* Pods-SeeFoodIBM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeeFoodIBM.release.xcconfig"; path = "Target Support Files/Pods-SeeFoodIBM/Pods-SeeFoodIBM.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9F87BD64475D44E4220B59 /* Pods_SeeFoodIBM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				14742F74227269A3007826E9 /* SeeFoodIBM */,
 				14742F73227269A3007826E9 /* Products */,
+				960FACD835B9220195703E3E /* Pods */,
+				4DD4525FAB2D0EDE1F369016 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = SeeFoodIBM;
 			sourceTree = "<group>";
 		};
+		4DD4525FAB2D0EDE1F369016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A87707DA255CE4DAD0949166 /* Pods_SeeFoodIBM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		960FACD835B9220195703E3E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				43EE3ABEEC8243175F26EC45 /* Pods-SeeFoodIBM.debug.xcconfig */,
+				B39875A6DE6DC332BD34B931 /* Pods-SeeFoodIBM.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14742F84227269A5007826E9 /* Build configuration list for PBXNativeTarget "SeeFoodIBM" */;
 			buildPhases = (
+				564632E27D41538868F23609 /* [CP] Check Pods Manifest.lock */,
 				14742F6E227269A3007826E9 /* Sources */,
 				14742F6F227269A3007826E9 /* Frameworks */,
 				14742F70227269A3007826E9 /* Resources */,
+				DD1AAD35B5CC8DB6E62BC84F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,78 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		564632E27D41538868F23609 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SeeFoodIBM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD1AAD35B5CC8DB6E62BC84F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SeeFoodIBM/Pods-SeeFoodIBM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonAssistantV1/Assistant.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonAssistantV2/Assistant.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonCompareComplyV1/CompareComply.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonDiscoveryV1/Discovery.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonLanguageTranslatorV3/LanguageTranslator.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonNaturalLanguageClassifierV1/NaturalLanguageClassifier.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonNaturalLanguageUnderstandingV1/NaturalLanguageUnderstanding.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonPersonalityInsightsV3/PersonalityInsights.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonRestKit/RestKit.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonSpeechToTextV1/SpeechToText.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonTextToSpeechV1/TextToSpeech.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonToneAnalyzerV3/ToneAnalyzer.framework",
+				"${BUILT_PRODUCTS_DIR}/IBMWatsonVisualRecognitionV3/VisualRecognition.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Assistant.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CompareComply.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Discovery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LanguageTranslator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NaturalLanguageClassifier.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NaturalLanguageUnderstanding.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PersonalityInsights.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RestKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpeechToText.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextToSpeech.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ToneAnalyzer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VisualRecognition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SeeFoodIBM/Pods-SeeFoodIBM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14742F6E227269A3007826E9 /* Sources */ = {
@@ -280,6 +379,7 @@
 		};
 		14742F85227269A5007826E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43EE3ABEEC8243175F26EC45 /* Pods-SeeFoodIBM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +398,7 @@
 		};
 		14742F86227269A5007826E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B39875A6DE6DC332BD34B931 /* Pods-SeeFoodIBM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
