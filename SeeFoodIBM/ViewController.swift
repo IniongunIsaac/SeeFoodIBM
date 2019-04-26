@@ -8,13 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    private var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        imagePicker.delegate = self
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            
+            imageView.image = image
+            
+            imagePicker.dismiss(animated: true, completion: nil)
+            
+        } else {
+            print("There was an error picking the image.")
+        }
+        
     }
 
-
+    @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
+        
+        imagePicker.sourceType = .savedPhotosAlbum
+        imagePicker.allowsEditing = false
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
 }
 
